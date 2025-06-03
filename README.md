@@ -66,7 +66,7 @@ The best configuration based on Sharpe ratio was:
 | Win Rate             | 39.07%      |
 | Profit Factor        | 1.66        |
 | Sortino Ratio        | 8.40        |
-| Calmar Ratio         | 520.68      |
+| Calmar Ratio         | 5.2068      |
 
 The strategy was consistently profitable, with very strong risk-adjusted metrics and relatively low drawdown. The low win rate is offset by strong average trade payoff and solid downside protection.
 
