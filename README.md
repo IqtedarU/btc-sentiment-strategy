@@ -47,38 +47,74 @@ A grid search was conducted over the following parameters:
 - **Smoothing Windows**: [3, 5, 7]  
 - **Stop Loss**: [0.03, 0.05, 0.08]  
 
-The best configuration based on Sharpe ratio was:
+The best configuration based on Sharpe ratio using a 2% risk-free rate was:
 
 - Relevance: **0.2**  
 - Sentiment Threshold: **0.2**  
 - Smoothing Window: **7 days**  
 - Stop-loss: **3%**  
 
-## Strategy Results (Test Set)
+## Strategy Results (Test Set: 2023-2025)
+
+Using a 4.5% risk free rate
 
 | Metric               | Value       |
 |----------------------|-------------|
-| Sharpe Ratio         | 2.92        |
-| Sharpe CI (95%)      | [2.90, 2.93]|
-| Annualized Return    | 93.81%      |
-| Max Drawdown         | -18.02%     |
+| **Sharpe Ratio**     | **2.81**    |
+| Sharpe CI (95%)      | [2.79, 2.82]|
+| **Annualized Return**| **93.81%**  |
+| **Max Drawdown**     | **-18.02%** |
 | Number of Trades     | 575         |
 | Win Rate             | 39.07%      |
 | Profit Factor        | 1.66        |
-| Sortino Ratio        | 8.40        |
-| Calmar Ratio         | 5.2068      |
+| **Sortino Ratio**    | **8.08**    |
+| **Calmar Ratio**     | **5.21**    |
+| **Correlation**      | **0.78**    |
+| **Beta**             | **0.35**    |
+| **Information Ratio**| **-0.67**   |
 
-The strategy was consistently profitable, with very strong risk-adjusted metrics and relatively low drawdown. The low win rate is offset by strong average trade payoff and solid downside protection.
+### Risk-Adjusted Performance Analysis
 
-## Benchmark: Buy-and-Hold BTC (Test Set)
+The strategy demonstrates exceptional risk-adjusted returns with a **Sharpe ratio of 2.81**, significantly outperforming traditional benchmarks. Key observations:
 
-| Metric               | Value       |
-|----------------------|-------------|
-| Total Return         | 532.06%     |
-| Annualized Return    | 144.20%     |
-| Max Drawdown         | -26.15%     |
+- **Low Beta (0.35)**: The strategy has significantly lower systematic risk than the benchmark, capturing only 35% of Bitcoin's market movements.
 
-Although the benchmark achieved higher raw return due to the tail end of a bull run, it experienced larger drawdowns and far lower risk-adjusted returns than the sentiment-based strategy.
+- **High Correlation (0.78)**: Despite the low beta, the strategy maintains strong correlation with Bitcoin, indicating it captures directional moves while reducing volatility.
+
+- **Negative Information Ratio (-0.67)**: This reflects that while the strategy achieves superior risk-adjusted returns, it underperformed the benchmark in absolute terms during this particular bull market period.
+
+## Benchmark: Buy-and-Hold BTC (Test Set: 2023-2025)
+
+| Metric                | Value       |
+|-----------------------|-------------|
+| **Total Return**      | **532.06%** |
+| **Annualized Return** | **144.20%** |
+| **Annualized Volatility** | **48.43%** |
+| **Max Drawdown**      | **-26.15%** |
+| **Sharpe Ratio**      | **1.75**    |
+| **Sortino Ratio**     | **2.76**    |
+| **Calmar Ratio**      | **5.51**    |
+| Win Rate              | 51.39%      |
+
+## Strategy vs Benchmark Comparison
+
+| Metric           | Strategy | Benchmark | Improvement |
+|------------------|----------|-----------|-------------|
+| **Sharpe Ratio** | 2.81     | 1.75      | +60.2%    |
+| **Sortino Ratio**| 8.08     | 2.76      | +193%    |
+| **Max Drawdown** | -18.02%  | -26.15%   | +8.1pp    |
+| **Calmar Ratio** | 5.21     | 5.51      | -0.3    |
+| **Return**       | 93.81%   | 144.20%   | -50.4pp  |
+
+### Key Performance Insights
+
+- **Superior Risk Management**: The strategy achieved 60.2% better Sharpe ratio and 193% better Sortino ratio, demonstrating exceptional downside protection.
+
+- **Drawdown Reduction**: Maximum drawdown was reduced by 8.1 percentage points, providing more stable returns.
+
+- **Return Trade-off**: While absolute returns were lower (-50.4pp), the strategy generated **5.2% return per 1% drawdown risk** vs **5.5%** for the benchmark - nearly equivalent risk-adjusted efficiency.
+
+- **Low-Beta Alpha Generation**: With a beta of 0.35, the strategy captured significant returns while taking substantially less systematic risk than pure Bitcoin exposure.
 
 ## Sensitivity Analysis
 
